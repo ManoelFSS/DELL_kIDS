@@ -1,0 +1,44 @@
+.area_form{
+    height: 90vh ;
+    background-color:rgba(0, 0, 0, 0.899);
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    color:#fff;
+    padding: 20px;
+}
+
+.episodios_conteinner{
+    display: flex;
+    justify-content: center; 
+    align-items:center;
+    gap: 10px;
+}
+.indexEpisodio{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    padding: 4px 10px;
+    height: 30px;
+    background-color:blueviolet;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.error{
+     height: 100vh;
+     display: flex;
+     align-items:center;
+     justify-content: center;
+}
+
+.error h3, p {
+     padding: 10px;
+     display: inline-block;
+}
+
+.area_form .iframe {
+   width: 660px;
+   height: 50vh;
+}

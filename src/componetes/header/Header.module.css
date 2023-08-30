@@ -1,0 +1,152 @@
+
+.area_contaier{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items:center ;
+    padding: 10px 20px ;
+    background-color: rgba(0, 0, 0, 0.346);
+    backdrop-filter: blur(4px);
+    position: fixed;
+    z-index: 99;
+}
+
+h1 img{
+   height: 60px;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    font-size: 20px;
+}
+
+li {
+    color: #fff;
+    cursor: pointer;
+}
+
+li:hover, .linkEstilizado:hover {
+    color:rgb(113, 113, 113)
+}
+
+.linkEstilizado {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    background-color:rgba(0, 0, 0, 0.635);
+    justify-content: center;
+    align-items:center;
+}
+.modal span {
+    position: absolute;
+    color:rgb(150, 4, 4);
+    font-weight: bolder;
+    top:30px;
+    right: 30px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.2s;
+    background-color:rgba(0, 0, 0, 0.584);
+    display: flex;
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    align-items:center;
+    padding-top: 3px;
+    border-radius: 6px;
+
+}
+.modal span:hover {
+    color:rgb(255, 32, 32)
+}
+.modal form {
+    position: relative;
+    border:solid 1px rgba(255, 255, 255, 0.737);
+    padding:30px;
+    border-radius: 10px;
+    background-color:#000000ab;
+    box-shadow: 0px 0px 20px #ffffff74;
+}
+.modal form label {
+    display: block;
+    padding: 10px 0px 15px;
+    color:#ffffff;
+    font-size: 20px;
+    font-weight: 800;
+
+}
+.modal form input {
+    height: 30px;
+    width: 240px;
+    padding: 0px 10px;
+    background-color:transparent;
+    border: solid 1px rgb(255, 255, 255);
+    color: #ffffff;
+}
+
+.submit{
+    margin-top: 40px;
+    color:#fff;
+    border:none !important;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.2s;
+
+}
+.submit:hover{
+   color:rgb(255, 32, 32);
+}
+
+.toogle{
+    width: 40px;
+    height: 40px;
+    border-radius:50%;
+   transition: all 0.2s;
+}
+
+.menu_lateral{
+    width: 200px;
+    height: calc(100vh - 88px);
+    position:fixed;
+    top:88px;
+    transition: all 0.3s;
+    z-index: 10;
+    background-color:rgba(0, 0, 0, 0.823);
+   
+   
+}
+
+.menu_lateral h3{
+    color:#fff;
+    font-size:20px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.menu_lateral  p .linkEstilizado {
+    color:red;
+    margin-left: 10px;
+}   
+
+.menu_lateral ul {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+
+.menu_lateral ul li{
+    margin: 20px;
+}
