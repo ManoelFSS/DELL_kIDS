@@ -99,6 +99,13 @@
     }
 
 }
+@media (min-width:800px) and (max-width:830px){
+    .banner, .container  {
+        height:180vh;
+        
+    }
+
+}
 @media (min-width:740px) and (max-width:750px){
     .banner, .container  {
         height:180vh;
