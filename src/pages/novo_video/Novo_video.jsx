@@ -19,23 +19,44 @@ export const Novo_video = () => {
     return (
         <>
             <section className={styles.container}>
-                <div className={styles.area_desenho}>
-                    <div>
-                        <img src={desenhoitem.image} alt={desenhoitem.nome} />
-                        <h3>{desenhoitem.nome}</h3>
-                        <p>{videos.length} | Videos </p>
-                    </div>
-                   
+                <div className={styles.area_listadevideos}>
+                    <section>
                         {videos.map((item)=>(
-                             <div>
-                                <span>{item.title}</span>
-                                <span>1</span>
-                                <span>2</span>
-                                <span>2</span>
+                            <div>
+                                <p>{item.title}</p>
+                                <section>
+                                    <span>1</span>
+                                    <span>2</span>
+                                    <span>2</span>
+                                </section>
                             </div>
                         ))}
-                    
-                    
+                    </section>
+                </div>
+                <div className={styles.area_desenho_form}>
+                    <div className={styles.post_desenho}>
+                        <img src={desenhoitem.image} alt={desenhoitem.nome} />
+                        <h3>{desenhoitem.nome}</h3>
+                        <h5>{videos.length} | Videos </h5>
+                    </div>
+                    <form action="#">
+                      
+                        <div>
+                            <label htmlFor="">Nome</label>
+                            <input type="text" placeholder="Digite o nome do desenho" />
+                        </div>
+                        <div>
+                            <label htmlFor="">titulo</label>
+                            <input type="text" placeholder="Digite Titulo do episodio" />
+                        </div>
+                        <div>
+                            <label htmlFor="">video</label>
+                            <input type="text" placeholder="Digite a Url do video" />
+                        </div>
+                        <div>
+                            <input className={styles.submit} type="submit"  value={"Adicionsr"}/>
+                        </div>
+                    </form>
                 </div>
             
             </section>
