@@ -5,6 +5,9 @@
   user-select: none;
   outline: none;
 }
+body{
+   background-color:black;
+}
 
 body::-webkit-scrollbar {
   width: 10px;               /* width of the entire scrollbar */

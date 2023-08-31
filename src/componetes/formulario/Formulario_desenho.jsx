@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import Styles from "./Form.module.css"
 import { v4 as uuidv4 } from 'uuid';
+import { Link } from "react-router-dom";
 
 export const Formulario_desenho = () => {
 
@@ -14,6 +15,7 @@ export const Formulario_desenho = () => {
     const [descrição, setDescrição] = useState('')
     const [categoria, setCategoria] = useState('')
     const [editIndex, setEditIndex] = useState(null);
+    const [videosFiltrados, setvideosFiltrados] = useState();
 
 
     const Hendl_Desenho = ()=>{
@@ -98,7 +100,8 @@ export const Formulario_desenho = () => {
         return videos.length;
     };
 
-    
+
+   
 
     return (
         <section className={Styles.container}>
@@ -162,10 +165,13 @@ export const Formulario_desenho = () => {
                         <div className={Styles.card} key={item.id}>
                             <img src={item.image} alt={item.name} />
                             <h4>{item.nome}</h4>
-                            <p>{calc_videos(item.nome)} | Videos</p><br/> 
-                            <p className={Styles.novoVideo}>Adicionar video</p>                           
+                            <p>{calc_videos(item.nome)} | Videos</p><br/>
+                            <Link  to={`/Novo_video/${item.id}` } >
+                                <p className={Styles.novoVideo}>Adicionar vídeo</p> 
+                            </Link>                          
                             <div className={Styles.area_delit_edit}>
-                                <img src="https://static.thenounproject.com/png/1072351-200.png" 
+                                <img 
+                                    src="https://static.thenounproject.com/png/1072351-200.png" 
                                      alt=""
                                      onClick={()=> hendelEdite(index)}
                                      />

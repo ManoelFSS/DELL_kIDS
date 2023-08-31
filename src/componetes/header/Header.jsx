@@ -114,14 +114,6 @@ export  const Header = () =>{
                                 Novo Desenho
                         </Link>
                     </li>
-                    <li onClick={()=> setMenu("-200px")}>
-                        <Link 
-                            to={""}
-                            className={styles.linkEstilizado}
-                            >
-                                Novo Video
-                        </Link>
-                    </li>
                 </ul>
             </aside>
         </header>
