@@ -124,7 +124,7 @@ export const Novo_video = () => {
                                 </div>
                             ))
                         ) : (
-                            <p>Nenhum vídeo</p>
+                            <p className={styles.nenhumVideos}>Nenhum vídeo</p>
                         )}
                     </section>
                 </div>

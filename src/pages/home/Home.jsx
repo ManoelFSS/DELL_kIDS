@@ -15,13 +15,13 @@ export const Home = () => {
 
         
 
-        if (!dbVideos || dbVideos.length === 0) {
+        if (!dbVideos ) {
            
             const totalVideos = db.data[0].videos;
             localStorage.setItem("db_videos", JSON.stringify(totalVideos));
         }
 
-        if (!dbDesenhos || dbVideos.length === 0) {
+        if (!dbDesenhos ) {
             const totalDesenhos = db.data[0].desenhos;
             localStorage.setItem("db_desenhos", JSON.stringify(totalDesenhos));
         }
