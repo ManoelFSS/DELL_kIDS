@@ -57,6 +57,7 @@ export const Formulario_desenho = () => {
 
 
     const hendelEditSubmit = () => {
+        event.preventDefault()
         if (editIndex !== null) {
 
             const updatedItem = {
@@ -85,6 +86,7 @@ export const Formulario_desenho = () => {
     }
 
     const hendelDelete = (index) => {
+        event.preventDefault()
         const updatedData = data.filter((item, i) => i !== index);
         setdata(updatedData);
         localStorage.setItem("db_desenhos", JSON.stringify(updatedData));
