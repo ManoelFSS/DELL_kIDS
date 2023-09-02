@@ -13,12 +13,16 @@ export const Home = () => {
         const dbVideos = JSON.parse(localStorage.getItem("db_videos"));
         const dbDesenhos = JSON.parse(localStorage.getItem("db_desenhos"));
 
-        if (!dbVideos) {
+       
+
+        if (!dbVideos ||  dbDesenhos <= 0) {
+            console.log("dbDesenhos")
+            console.log("dbVideos")
             const totalVideos = db.data[0].videos;
             localStorage.setItem("db_videos", JSON.stringify(totalVideos));
         }
 
-        if (!dbDesenhos) {
+        if (!dbDesenhos  ||  dbDesenhos <= 0) {
             const totalDesenhos = db.data[0].desenhos;
             localStorage.setItem("db_desenhos", JSON.stringify(totalDesenhos));
         }
