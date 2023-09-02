@@ -15,14 +15,14 @@ export const Home = () => {
 
        
 
-        if (!dbVideos ||  dbVideos === "") {
+        if (!dbVideos ||  dbVideos === "null") {
             console.log("dbDesenhos")
             console.log("dbVideos")
             const totalVideos = db.data[0].videos;
             localStorage.setItem("db_videos", JSON.stringify(totalVideos));
         }
 
-        if (!dbDesenhos  ||  dbDesenhos === "") {
+        if (!dbDesenhos  ||  dbDesenhos === "null") {
             const totalDesenhos = db.data[0].desenhos;
             localStorage.setItem("db_desenhos", JSON.stringify(totalDesenhos));
         }
