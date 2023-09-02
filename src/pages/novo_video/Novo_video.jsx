@@ -62,10 +62,11 @@ export const Novo_video = () => {
             setsalveEdite(true)
             atualiVideos() 
             setSubmit("Adicionar")
+            event.preventDefault()
         }else{
+
             handleNovovideo()
             setsalveEdite(true)
-            atualiVideos() 
         }
        
     };
@@ -82,18 +83,15 @@ export const Novo_video = () => {
     };
 
     const handleNovovideo = () => {
-
+            event.preventDefault()
             const novoVideo = {
                 "id":uuidv4(),
                 "nome": nomeVideo,
                 "title": title,
                 "video": url,
             };
-    
             setdb_videos((prevVideos) => [...prevVideos, novoVideo]);
-        
             localStorage.setItem("db_videos", JSON.stringify([...db_videos, novoVideo]));
-    
             setTitle("");
             setUrl("");
     };

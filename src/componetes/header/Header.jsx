@@ -19,8 +19,8 @@ export  const Header = () =>{
             event.preventDefault()
             setLogado(true)
             setDisplay("none")
-            setUsuario("")
-            setSenha("")
+            // setUsuario("")
+            // setSenha("")
         }
     }
 
@@ -72,7 +72,7 @@ export  const Header = () =>{
                                     type="text" 
                                     placeholder="Digite seu Usuário" 
                                     autoComplete={"off"}
-                                    
+                                    value={usuario}
                                     onChange={(e)=> setUsuario(e.target.value)}
                                     />
                             </div>
@@ -82,7 +82,7 @@ export  const Header = () =>{
                                     type="password" 
                                     placeholder="Digite sua Senha" 
                                     autoComplete={"off"}
-                                    
+                                    value={senha}
                                     onChange={(e)=> setSenha(e.target.value)}
                                     />
                             </div>
@@ -101,7 +101,7 @@ export  const Header = () =>{
                 className={styles.menu_lateral} 
                 style={{right:`${menu}`}}
                 >
-                <h3>Olá,<br/> {usuario}</h3>
+                <h3>Olá,<br/>{usuario}</h3>
                 <p 
                     onClick={()=> `${setLogado(false)} ${setMenu("-200px")}`}
                     style={{color:"#fff"}}
