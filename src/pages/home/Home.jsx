@@ -8,17 +8,27 @@ import db from "../../../db.json"
 
 
 export const Home = () => {
+    
+   
+        const dbVideos = JSON.parse(localStorage.getItem("db_videos"));
+        const dbDesenhos = JSON.parse(localStorage.getItem("db_desenhos"));
 
-    const totalVideos = db.data[0].videos
-    const totalDesenhos = db.data[0].desenhos
-    localStorage.setItem("db_videos", JSON.stringify(totalVideos)) ?? []
-    localStorage.setItem("db_desenhos", JSON.stringify(totalDesenhos)) ?? []
+        if (!dbVideos) {
+            const totalVideos = db.data[0].videos;
+            localStorage.setItem("db_videos", JSON.stringify(totalVideos));
+        }
+
+        if (!dbDesenhos) {
+            const totalDesenhos = db.data[0].desenhos;
+            localStorage.setItem("db_desenhos", JSON.stringify(totalDesenhos));
+        }
+
+   
 
     const kids = JSON.parse(localStorage.getItem("db_desenhos"))
     const [randomNumber, setRandomNumber] = useState(0);
      
-    console.log(totalDesenhos)
-    console.log(totalVideos)
+   
 
     useEffect(() => {
         const interval = setInterval(() => {

@@ -91,7 +91,7 @@ li:hover, .linkEstilizado:hover {
     height: 30px;
     width: 240px;
     padding: 0px 10px;
-    background-color:transparent;
+    background-color:rgba(0, 0, 0, 0.268);
     border: solid 1px rgb(255, 255, 255);
     color: #ffffff;
 }

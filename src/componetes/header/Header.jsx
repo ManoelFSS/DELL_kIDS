@@ -11,8 +11,7 @@ export  const Header = () =>{
     const [logado, setLogado] = useState(false)
     const [menu, setMenu] = useState("-200px")
 
-    console.log(usuario)
-    console.log(senha)
+  
     
     const confirma_login = () =>{
         
@@ -20,6 +19,8 @@ export  const Header = () =>{
             event.preventDefault()
             setLogado(true)
             setDisplay("none")
+            setUsuario("")
+            setSenha("")
         }
     }
 
@@ -70,6 +71,8 @@ export  const Header = () =>{
                                 <input 
                                     type="text" 
                                     placeholder="Digite seu Usuário" 
+                                    autoComplete={"off"}
+                                    
                                     onChange={(e)=> setUsuario(e.target.value)}
                                     />
                             </div>
@@ -78,6 +81,8 @@ export  const Header = () =>{
                                 <input 
                                     type="password" 
                                     placeholder="Digite sua Senha" 
+                                    autoComplete={"off"}
+                                    
                                     onChange={(e)=> setSenha(e.target.value)}
                                     />
                             </div>

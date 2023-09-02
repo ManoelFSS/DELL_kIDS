@@ -8,16 +8,12 @@ export const Formulario_desenho = () => {
     const [data, setdata] = useState( JSON.parse(localStorage.getItem("db_desenhos")) )
     const [dataVideos, setdataVideos] = useState( JSON.parse(localStorage.getItem("db_videos")) )
    
-  
-
     const [image, setImage] = useState('')
     const [nome, setNome] = useState('')
     const [descrição, setDescrição] = useState('')
     const [categoria, setCategoria] = useState('')
     const [editIndex, setEditIndex] = useState(null);
-    const [videosFiltrados, setvideosFiltrados] = useState();
-
-
+  
     const Hendl_Desenho = ()=>{
 
         event.preventDefault()

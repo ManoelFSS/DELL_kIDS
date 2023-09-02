@@ -11,6 +11,7 @@
     justify-content: center;
     align-items:center;
     height: 100vh;
+   
 }
 
 .area_listadevideos div {
@@ -20,14 +21,28 @@
     align-items:center;
     padding: 10px;
     margin-bottom: 10px;
-    border:solid 1px red ;
+    background-color: rgb(28, 28, 28);
+    transition: all 0.3s;
+}
+
+.area_listadevideos div:hover {
+    background-color: rgb(59, 59, 59);
 }
 
 .area_listadevideos section span {
-     display: inline-block;
+    display: inline-block;
     width: 30px;
     height: 30px;
-    background-color:rgb(92, 92, 92);
+    border-radius: 50%;
+    border: solid 2px #fff;
+    background-color:rgb(255, 255, 255);
+}
+
+.area_listadevideos img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    
 }
 
 .area_listadevideos  p {
@@ -44,13 +59,9 @@
 }
 
 .area_desenho_form form {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    width: 300px;
-}
-
-.area_desenho_form form h3 {
-   
+    background-color: rgba(75, 75, 75, 0.5);
+    padding: 0px 0px 20px 20px;
+    width: 320px;
 }
 
 .area_desenho_form form label{
@@ -60,10 +71,12 @@
 }
 
 .area_desenho_form form input{
-    width: 260px;
+    width: 280px;
     height: 30px;
     background-color:transparent;
     border:solid 1px #fff;
+    color:#fff;
+    padding: 0px 10px;
 }
 
 .area_desenho_form form .submit {
@@ -81,11 +94,24 @@
 .post_desenho {
     background-color: rgba(0, 0, 0, 0.499);
     padding:  20px;
-    margin-top: 100px;
+    margin-top:80px;
 }
 
 
 .post_desenho img {
-    width: 260px;
+    width: 280px;
+    height: 160px;
  
+}
+
+.post_desenho h3 {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+.post_desenho h5 {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
 }

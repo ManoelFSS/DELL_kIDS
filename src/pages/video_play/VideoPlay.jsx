@@ -1,15 +1,13 @@
 import React, {useState} from "react";
 import styles from "./VideoPlay.module.css"
-import db_videos from "../../../db.json"
-
-
 
 export const VideoPlay = () =>{
     console.log()
     
     const db_desenho = JSON.parse(localStorage.getItem("setDesenho"))
+    const db_videos = JSON.parse(localStorage.getItem("db_videos"))
     const [episodio, setEpisodio] = useState(0)
-    const totalEpisodios = db_videos.data[0].videos
+    const totalEpisodios = db_videos
     const desenhoFiltrado = totalEpisodios.filter((episodios) => episodios.nome === db_desenho[0].nome);
     const videoIndex = [desenhoFiltrado[episodio]]
     console.log(videoIndex[0])
@@ -59,3 +57,14 @@ export const VideoPlay = () =>{
         </>
     )
 }
+
+
+
+{/* <iframe 
+width="950" 
+height="534" 
+src="https://www.youtube.com/embed/KBD6jFO4b-0" 
+title="Tom &amp; Jerry em Português | Brasil | Nunca um Dia Entediante | WB Kids" 
+frameborder="0" 
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+allowfullscreen></iframe> */}
