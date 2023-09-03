@@ -36,6 +36,8 @@
 .error h3, p {
      padding: 10px;
      display: inline-block;
+     color:#fff;
+     font-size: 18px;
 }
 
 .area_form .iframe {

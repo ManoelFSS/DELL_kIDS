@@ -8,8 +8,7 @@ export const Novo_video = () => {
     const [db_videos, setdb_videos] = useState(()=>{ return JSON.parse(localStorage.getItem("db_videos"))});
     const [db_desenhos, setdb_desenhos] = useState(()=>{ return JSON.parse(localStorage.getItem("db_desenhos"))});
     const [videos, setVideos] = useState([])
-    const [salveEdite, setsalveEdite] = useState(true)
-    const [editingIndex, setEditingIndex] = useState(-1)
+    const [salveEdite, setsalveEdite] = useState(null)
     const [submit, setSubmit] = useState("Adicionar")
 
 
@@ -30,48 +29,47 @@ export const Novo_video = () => {
 
 
     const handleEdit = (item, index) => {
+        console.log(item.id)
         setNomeVideo(item.nome);
         setTitle(item.title);
         setUrl(item.video);
-        setEditingIndex(index); // Defina o índice do item sendo editado
-        setsalveEdite(false)
+        setsalveEdite(item.id)
         setSubmit("Editar")
     };
     
     const handleSaveEdit = () => {
-        
-        if(!salveEdite){
+        event.preventDefault()
+        if (salveEdite !== null) {
             const editedVideo = {
-                id: uuidv4(),
+                id: salveEdite,
                 nome: nomeVideo,
                 title: title,
                 video: url,
             };
-        
+    
             const updatedVideos = [...db_videos];
-            updatedVideos[editingIndex] = editedVideo;
-        
-            setdb_videos(updatedVideos); // Atualize o estado local com os vídeos editados
-            localStorage.setItem("db_videos", JSON.stringify(updatedVideos));
-        
-            // Limpe os campos do formulário e o índice de edição
-
+            const indexToEdit = updatedVideos.findIndex((item) => item.id === salveEdite);
+    
+            if (indexToEdit !== -1) {
+                // Remove o item da posição encontrada
+                updatedVideos.splice(indexToEdit, 1);
+                // Insere o item editado na mesma posição
+                updatedVideos.splice(indexToEdit, 0, editedVideo);
+    
+                setdb_videos(updatedVideos);
+                localStorage.setItem("db_videos", JSON.stringify(updatedVideos));
+            }
+    
             setTitle("");
             setUrl("");
-            setEditingIndex('');
-            setsalveEdite(true)
-            atualiVideos() 
-            setSubmit("Adicionar")
-            event.preventDefault()
-        }else{
+            setEditingIndex(-1);
+            atualiVideos();
+            setSubmit("Adicionar");
 
-            handleNovovideo()
-            setsalveEdite(true)
+        } else {
+            handleNovovideo();
         }
-       
     };
-
-
 
     const handleDelete = (itemDelete) => {
         const updatedVideos = db_videos.filter((item) => item.id !== itemDelete.id);

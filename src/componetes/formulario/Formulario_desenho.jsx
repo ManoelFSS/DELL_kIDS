@@ -42,7 +42,7 @@ export const Formulario_desenho = () => {
         hendelLocalStorage()
     },[data])
 
-    // codigo de ediçao
+   
 
     const hendelEdite = (index) => {
      
