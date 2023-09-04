@@ -28,7 +28,7 @@ export const Novo_video = () => {
     },[db_videos])
 
 
-    const handleEdit = (item, index) => {
+    const handleEdit = (item) => {
         console.log(item.id)
         setNomeVideo(item.nome);
         setTitle(item.title);
@@ -62,10 +62,9 @@ export const Novo_video = () => {
     
             setTitle("");
             setUrl("");
-            setEditingIndex(-1);
             atualiVideos();
             setSubmit("Adicionar");
-
+            setsalveEdite(null)
         } else {
             handleNovovideo();
         }
@@ -108,14 +107,14 @@ export const Novo_video = () => {
                                             <img 
                                                 src="https://static.thenounproject.com/png/1072351-200.png" 
                                                 alt=""
-                                                onClick={()=> handleEdit(item, index)}
+                                                onClick={()=> handleEdit(item)}
                                                 />
                                         </span>
                                         <span>
                                             <img 
                                                 src="https://w7.pngwing.com/pngs/591/7/png-transparent-bin-delete-remove-trash-basic-interface-icon.png" 
                                                 alt="" 
-                                                onClick={() => handleDelete(item, index)}
+                                                onClick={() => handleDelete(item)}
                                                 />
                                         </span>
                                     </section>
@@ -165,7 +164,7 @@ export const Novo_video = () => {
                                 className={styles.submit} 
                                 type="submit"  
                                 value={submit}
-                                onClick={()=> handleSaveEdit()}
+                                onClick={(e)=> handleSaveEdit(e)}
                                 />
                                 
                         </div>
